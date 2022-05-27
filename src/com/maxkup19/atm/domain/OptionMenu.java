@@ -32,10 +32,12 @@ public class OptionMenu extends Account {
                 x = 2;
             }
             for (Map.Entry<Integer, Integer> entry : data.entrySet()){
-                if (entry.getKey() == getCustomerNumber() && entry.getValue() == getPinNumber())
+                if (entry.getKey() == getCustomerNumber() && entry.getValue() == getPinNumber()) {
+
                     getChecking();
+                }
             }
-            System.out.println("Wrong account number or/and PIN.\n");
+            if(x != 1) System.out.println("Wrong account number or/and PIN.\n");
         } while (x == 2);
     }
 
@@ -61,7 +63,7 @@ public class OptionMenu extends Account {
                 getDepositInput();
                 getChecking();
             }
-            case 4 -> System.out.println("THanks for using our ATM");
+            case 4 -> System.out.println("Thanks for using our ATM");
             default -> {
                 System.out.println("Invalid choice");
                 getChecking();
